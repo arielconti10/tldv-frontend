@@ -1,0 +1,69 @@
+{
+  "name": "next-boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint src --max-warnings=0",
+    "test": "jest --maxWorkers=50%",
+    "test:watch": "jest --watch --maxWorkers=25%",
+    "test:ci": "jest --runInBand",
+    "g": "yarn plop --plopfile generators/plopfile.js",
+    "storybook": "start-storybook -s ./public -p 6006",
+    "build-storybook": "build-storybook -s ./public",
+    "postinstall": "husky install",
+    "prepare": "husky install",
+    "postbuild": "next-sitemap",
+    "analyze": "ANALYZE=true yarn build"
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "yarn lint --fix",
+      "yarn test --findRelatedTests --bail"
+    ]
+  },
+  "dependencies": {
+    "@next/bundle-analyzer": "^12.0.7",
+    "@xstyled/styled-components": "^3.1.2",
+    "next": "^12.0.7",
+    "next-pwa": "5.4.4",
+    "next-seo": "^4.28.1",
+    "preact": "^10.6.2",
+    "preact-render-to-string": "^5.1.19",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@storybook/addon-essentials": "6.4.8",
+    "@storybook/react": "6.4.8",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.11",
+    "@types/react": "17.0.37",
+    "@types/styled-components": "5.1.17",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-styled-components": "^2.0.2",
+    "eslint": "<9.0.0",
+    "eslint-config-next": "^12.0.7",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.3",
+    "lint-staged": "^12.1.2",
+    "next-sitemap": "^1.6.203",
+    "plop": "^3.0.2",
+    "prettier": "^2.5.1",
+    "storybook-addon-next-router": "^3.1.0",
+    "typescript": "^4.5.2"
+  }
+}
