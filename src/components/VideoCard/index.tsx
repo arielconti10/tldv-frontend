@@ -27,7 +27,13 @@ const VideoCard = ({ children, data, ...props }: VideoCardProps) => {
     >
       <Image src={data.thumbnailUrl} width="360" height="240" unoptimized />
 
-      <x.h1 fontWeight="normal" fontSize="lg" lineHeight={6} mb={2} flex={1}>
+      <x.h1
+        fontWeight="normal"
+        fontSize={{ xs: 'lg', md: 'xl' }}
+        lineHeight={6}
+        mb={2}
+        flex={1}
+      >
         {data.title}
       </x.h1>
 
