@@ -6,7 +6,6 @@ const HomePage = () => {
   return (
     <>
       <NextSeo title="Home" />
-
       <HomeLayout />
     </>
   )

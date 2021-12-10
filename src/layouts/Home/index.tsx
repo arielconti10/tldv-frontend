@@ -1,32 +1,67 @@
-import { useColorMode, x } from '@xstyled/styled-components'
-
+import { x } from '@xstyled/styled-components'
 import BaseLayout from 'layouts/Base'
 
-import Button from 'components/Button'
+import VideoCard from 'components/VideoCard'
+import Header from 'components/Header'
+
+import useVideos from '../../hooks/useVideos'
+import Spinner from 'components/Spinner'
 
 const HomeLayout = () => {
-  const [colorMode, setColorMode] = useColorMode()
-
-  const toggleColor = () => {
-    setColorMode(colorMode === 'default' ? 'dark' : 'default')
-  }
+  const { status, data, error, isFetching } = useVideos()
 
   return (
-    <BaseLayout flexDirection="column">
-      <Button onClick={toggleColor}>
-        Toggle {colorMode === 'default' ? 'Dark' : 'Light'}
-      </Button>
+    <BaseLayout flexDirection="column" py={4}>
+      <Header />
 
-      <x.div position="absolute" bottom="20" fontWeight="medium">
+      {status === 'loading' ? (
+        <Spinner />
+      ) : status === 'error' ? (
+        <span>Error: {error && error.message}</span>
+      ) : (
+        <x.div
+          row
+          gap={2}
+          my={4}
+          px={6}
+          flexWrap="wrap"
+          justifyContent="flex-start"
+          alignItems="flex-start"
+        >
+          {data && data.length > 0
+            ? data.map((video) => {
+                return (
+                  <x.div
+                    key={video.id}
+                    col
+                    display="flex"
+                    justifyContent={{ xs: 'center', md: 'flex-start' }}
+                  >
+                    <VideoCard
+                      key={video.id}
+                      data={video}
+                      my={4}
+                      w={{ xs: '100%', md: 'xl' }}
+                    />
+                  </x.div>
+                )
+              })
+            : 'No videos found'}
+        </x.div>
+      )}
+
+      {isFetching && status !== 'loading' ? <Spinner /> : ' '}
+
+      <x.div fontWeight="light">
         Made with ❤️ by{' '}
         <x.a
-          href="https://github.com/viniciushvc"
+          href="https://github.com/arielconti10"
           target="_blank"
           color="link"
           rel="norefer noopener"
           textDecoration={{ hover: 'underline' }}
         >
-          Vinicius Vicentini
+          Ariel Conti
         </x.a>
       </x.div>
     </BaseLayout>

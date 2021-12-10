@@ -12,8 +12,9 @@ const BaseLayout = ({
     <x.main
       display="flex"
       minH="100vh"
-      justifyContent="center"
+      justifyContent="flex-start"
       alignItems="center"
+      bg="cool-gray-900"
       {...props}
     >
       {children}

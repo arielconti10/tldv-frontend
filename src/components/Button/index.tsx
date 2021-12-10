@@ -12,6 +12,7 @@ const Button = ({ children, ...props }: ButtonProps) => {
   return (
     <x.button
       display="flex"
+      justifyContent="space-between"
       transition
       transitionDuration
       bg={{ _: 'blue-600', hover: 'blue-500' }}
