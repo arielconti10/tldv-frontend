@@ -4,6 +4,6 @@
  * @see https://github.com/iamvishnusankar/next-sitemap
  */
 module.exports = {
-  siteUrl: 'https://vini-boilerplate.vercel.app',
+  siteUrl: 'https://tldv-client.herokuapp.com',
   generateRobotsTxt: true
 }

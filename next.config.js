@@ -15,6 +15,9 @@ module.exports = withBundleAnalyzer(
       dest: 'public',
       disable: !isProd
     },
+    images: {
+      domains: ['img.youtube.com']
+    },
     // Replace React with Preact
     webpack: (config, { dev, isServer }) => {
       // only in client production build
