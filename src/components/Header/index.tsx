@@ -12,7 +12,12 @@ const Header = () => {
       my={5}
     >
       <x.h1 fontSize="3xl" fontFamily="sans-serif" fontWeight="bolder">
-        <Image src="/img/tldv-logo.svg" width={124} height={48} />
+        <Image
+          src="/img/tldv-logo.svg"
+          width={124}
+          height={48}
+          alt="TLDV logo"
+        />
       </x.h1>
     </x.header>
   )

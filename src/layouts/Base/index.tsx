@@ -2,6 +2,8 @@ import { PropsWithChildren } from 'react'
 
 import { x, SystemProps } from '@xstyled/styled-components'
 
+import Footer from 'components/Footer'
+
 type BaseLayoutProps = SystemProps
 
 const BaseLayout = ({
@@ -18,6 +20,7 @@ const BaseLayout = ({
       {...props}
     >
       {children}
+      <Footer />
     </x.main>
   )
 }

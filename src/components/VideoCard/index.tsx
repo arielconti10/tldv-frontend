@@ -25,7 +25,12 @@ const VideoCard = ({ children, data, ...props }: VideoCardProps) => {
       alignSelf="stretch"
       h="sm"
     >
-      <Image src={data.thumbnailUrl} width="360" height="240" />
+      <Image
+        src={data.thumbnailUrl}
+        width="360"
+        height="240"
+        alt={data.title}
+      />
 
       <x.h1
         fontWeight="normal"

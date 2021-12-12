@@ -51,19 +51,6 @@ const HomeLayout = () => {
       )}
 
       {isFetching && status !== 'loading' ? <Spinner /> : ' '}
-
-      <x.div fontWeight="light">
-        Made with ❤️ by{' '}
-        <x.a
-          href="https://github.com/arielconti10"
-          target="_blank"
-          color="link"
-          rel="norefer noopener"
-          textDecoration={{ hover: 'underline' }}
-        >
-          Ariel Conti
-        </x.a>
-      </x.div>
     </BaseLayout>
   )
 }
