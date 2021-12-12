@@ -57,6 +57,7 @@ const Toggle = ({ checked, onChange }: ToggleProps) => {
         checked={checked}
         onChange={onChange}
         id="dmcheck"
+        name="dmcheck"
       />
       <label htmlFor="dmcheck" />
     </ToggleControl>
