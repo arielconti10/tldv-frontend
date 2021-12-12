@@ -137,24 +137,6 @@ const VideoEditLayout = () => {
                       }}
                     />
                     No
-                    {/* <Input
-                      name="isPublic"
-                      type="radio"
-                      checked={videoData?.isPublic ? true : false}
-                      onChange={() => {
-                        setVideoData({ ...videoData, isPublic: true })
-                      }}
-                    />
-                    Yes
-                    <Input
-                      name="isPublic"
-                      type="radio"
-                      checked={videoData?.isPublic ? true : false}
-                      onChange={() => {
-                        setVideoData({ ...videoData, isPublic: false })
-                      }}
-                    />
-                    No */}
                   </x.div>
                 </x.fieldset>
 

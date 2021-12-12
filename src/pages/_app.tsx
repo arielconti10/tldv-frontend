@@ -26,6 +26,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <link rel="apple-touch-icon" href="/img/icon-512.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="description" content="tl;dv - videos" />
+        <meta name="theme-color" content="#10171d" />
       </Head>
 
       <DefaultSeo {...SEO} />

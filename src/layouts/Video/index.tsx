@@ -25,7 +25,11 @@ const VideoLayout = () => {
           <Card w={{ xs: 'sm', md: '2xl' }} p={{ xs: 2 }}>
             <ReactPlayer url={data?.url} width="100%" height="360px" />
             <x.div mt={2}>
-              <x.span>Video url</x.span>
+              <x.span>
+                {data?.slug}
+                {' - '}
+                {data?.url}
+              </x.span>
             </x.div>
           </Card>
         </>
