@@ -23,6 +23,7 @@ const VideoCardHeader = ({ title }: VideoCardHeaderProps) => {
         onClick={() => {
           router.back()
         }}
+        aria-label="Go back"
       >
         <ArrowLeft size={16} />
       </Button>
