@@ -28,7 +28,6 @@ const VideoCardHeader = ({ title }: VideoCardHeaderProps) => {
       </Button>
       <x.h1
         fontSize={{ md: '3xl', xs: 'lg' }}
-        color="gray-100"
         overflow="hidden"
         textOverflow="ellipsis"
         textAlign="center"
