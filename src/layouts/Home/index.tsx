@@ -2,7 +2,6 @@ import { x } from '@xstyled/styled-components'
 import BaseLayout from 'layouts/Base'
 
 import VideoCard from 'components/VideoCard'
-import Header from 'components/Header'
 
 import useVideos from '../../hooks/useVideos'
 import Spinner from 'components/Spinner'
@@ -12,8 +11,6 @@ const HomeLayout = () => {
 
   return (
     <BaseLayout flexDirection="column" py={4}>
-      <Header />
-
       {status === 'loading' ? (
         <Spinner />
       ) : status === 'error' ? (

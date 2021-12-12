@@ -13,6 +13,7 @@ import { Video } from 'shared/types'
 
 import useVideo from 'hooks/useVideo'
 import Input from 'components/Input'
+import Toggle from 'components/Toggle'
 
 const VideoEditLayout = () => {
   const router = useRouter()
@@ -125,7 +126,18 @@ const VideoEditLayout = () => {
                   <x.label htmlFor="isPublic">Public</x.label>
 
                   <x.div display="flex" alignItems="center" gap={2} mt={2}>
-                    <Input
+                    Yes
+                    <Toggle
+                      checked={videoData.isPublic}
+                      onChange={(e) => {
+                        setVideoData({
+                          ...videoData,
+                          isPublic: e.target.checked
+                        })
+                      }}
+                    />
+                    No
+                    {/* <Input
                       name="isPublic"
                       type="radio"
                       checked={videoData?.isPublic ? true : false}
@@ -142,7 +154,7 @@ const VideoEditLayout = () => {
                         setVideoData({ ...videoData, isPublic: false })
                       }}
                     />
-                    No
+                    No */}
                   </x.div>
                 </x.fieldset>
 

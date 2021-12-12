@@ -2,7 +2,11 @@ import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
-import { ThemeProvider, Preflight } from '@xstyled/styled-components'
+import {
+  ThemeProvider,
+  Preflight,
+  ColorModeProvider
+} from '@xstyled/styled-components'
 
 import { DefaultSeo } from 'next-seo'
 import SEO from '../../next-seo.config'
@@ -27,12 +31,14 @@ const App = ({ Component, pageProps }: AppProps) => {
       <DefaultSeo {...SEO} />
 
       <ThemeProvider theme={theme}>
-        <QueryClientProvider client={queryClient}>
-          <Preflight />
-          <GlobalStyles />
+        <ColorModeProvider>
+          <QueryClientProvider client={queryClient}>
+            <Preflight />
+            <GlobalStyles />
 
-          <Component {...pageProps} />
-        </QueryClientProvider>
+            <Component {...pageProps} />
+          </QueryClientProvider>
+        </ColorModeProvider>
       </ThemeProvider>
     </>
   )

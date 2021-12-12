@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { NextRouter } from 'next/router'
+import { ThemeProvider, ColorModeProvider } from '@xstyled/styled-components'
+import theme from 'styles/theme'
 
 export function createMockRouter(router: Partial<NextRouter>): NextRouter {
   return {
@@ -37,6 +39,11 @@ const queryClient = new QueryClient({
     }
   }
 })
+
 export const wrapper = ({ children }: { children: ReactNode }) => (
-  <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  <ThemeProvider theme={theme}>
+    <ColorModeProvider>
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    </ColorModeProvider>
+  </ThemeProvider>
 )

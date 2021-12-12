@@ -21,28 +21,35 @@ const VideoCard = ({ children, data, ...props }: VideoCardProps) => {
     <Card
       maxWidth="xs"
       borderRadius="2xl"
-      {...props}
       alignSelf="stretch"
       h="sm"
+      {...props}
     >
       <Image
         src={data.thumbnailUrl}
-        width="360"
+        width="100%"
         height="240"
         alt={data.title}
+        loading="lazy"
+        objectFit="cover"
       />
-
       <x.h1
         fontWeight="normal"
         fontSize={{ xs: 'lg', md: 'xl' }}
         lineHeight={6}
-        mb={2}
+        my={2}
         flex={1}
+        px={2}
       >
         {data.title}
       </x.h1>
-
-      <x.div display="flex" gap="2" alignItems="center" flexDirection="row">
+      <x.div
+        display="flex"
+        gap="2"
+        alignItems="center"
+        flexDirection="row"
+        px={2}
+      >
         <Button
           onClick={() => {
             router.push(`/video/${data.id}`)

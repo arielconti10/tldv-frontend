@@ -9,12 +9,9 @@ const Card = ({ children, ...props }: CardProps) => {
     <x.div
       display="flex"
       flexDirection="column"
-      bg={{ _: 'white' }}
-      color={{ _: 'black' }}
       fontSize="sm"
       fontWeight="medium"
       borderRadius="md"
-      px={4}
       py={3}
       boxShadow="lg"
       {...props}
