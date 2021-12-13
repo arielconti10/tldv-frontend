@@ -47,9 +47,10 @@ const InputCheck = styled.input`
 interface ToggleProps {
   checked: boolean
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  name?: string
 }
 
-const Toggle = ({ checked, onChange }: ToggleProps) => {
+const Toggle = ({ checked, onChange, name = 'dmcheck' }: ToggleProps) => {
   return (
     <ToggleControl>
       <InputCheck
@@ -57,7 +58,7 @@ const Toggle = ({ checked, onChange }: ToggleProps) => {
         checked={checked}
         onChange={onChange}
         id="dmcheck"
-        name="dmcheck"
+        name={name}
       />
       <label htmlFor="dmcheck" />
     </ToggleControl>

@@ -97,7 +97,7 @@ const VideoEditLayout = () => {
             {mutation.status === 'loading' ? (
               <Spinner />
             ) : (
-              <>
+              <form name="edit-video">
                 <Input
                   label="Title"
                   name="title"
@@ -124,10 +124,10 @@ const VideoEditLayout = () => {
 
                 <x.fieldset>
                   <x.label htmlFor="isPublic">Public</x.label>
-
                   <x.div display="flex" alignItems="center" gap={2} mt={2}>
                     Yes
                     <Toggle
+                      name="isPublic"
                       checked={videoData.isPublic}
                       onChange={(e) => {
                         setVideoData({
@@ -148,7 +148,7 @@ const VideoEditLayout = () => {
                 >
                   Save
                 </Button>
-              </>
+              </form>
             )}
           </Card>
         </>
