@@ -69,6 +69,7 @@ const VideoEditLayout = () => {
               color="gray-200"
               boxShadow="none"
               alignSelf="flex-start"
+              aria-label="Go back"
               p={{ xs: 2, md: 2 }}
               mx={{ md: 4 }}
               onClick={() => {
