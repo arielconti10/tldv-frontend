@@ -92,12 +92,12 @@ const VideoEditLayout = () => {
             display="flex"
             flexDirection="column"
             gap={5}
-            minHeight="lg"
+            minHeight="md"
           >
             {mutation.status === 'loading' ? (
               <Spinner />
             ) : (
-              <form name="edit-video">
+              <x.form name="edit-video" px={2}>
                 <Input
                   label="Title"
                   name="title"
@@ -148,7 +148,7 @@ const VideoEditLayout = () => {
                 >
                   Save
                 </Button>
-              </form>
+              </x.form>
             )}
           </Card>
         </>
