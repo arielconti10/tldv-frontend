@@ -1,8 +1,10 @@
-import { x } from '@xstyled/styled-components'
+import { useColorMode, x } from '@xstyled/styled-components'
 import DarkModeToggle from 'components/DarkModeToggle'
 import Image from 'next/image'
 
 const Header = () => {
+  const [mode] = useColorMode()
+
   return (
     <x.header
       display="flex"
@@ -14,8 +16,9 @@ const Header = () => {
     >
       <x.h1 fontSize="3xl" fontFamily="sans-serif" fontWeight="bolder">
         <Image
-          src="/img/tldv-logo.svg"
-          color="#000"
+          src={
+            mode === 'dark' ? '/img/tldv-logo.svg' : '/img/tldv-logo-dark.svg'
+          }
           width={124}
           height={48}
           alt="TLDV logo"
