@@ -73,7 +73,7 @@ const VideoEditLayout = () => {
               p={{ xs: 2, md: 2 }}
               mx={{ md: 4 }}
               onClick={() => {
-                router.back()
+                router.push('/')
               }}
             >
               <ArrowLeft size={16} />
